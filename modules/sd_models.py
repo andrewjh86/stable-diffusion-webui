@@ -14,7 +14,8 @@ from modules.paths import models_path
 from modules.sd_hijack_inpainting import do_inpainting_hijack, should_hijack_inpainting
 
 model_dir = "Stable-diffusion"
-model_path = os.path.abspath(os.path.join(models_path, model_dir))
+#model_path = os.path.abspath(os.path.join(models_path, model_dir))
+model_path =  "C:/OtherGames/ai_sd/Prg/Stable Diffusion GRisk GUI/models/models_sd"
 
 CheckpointInfo = namedtuple("CheckpointInfo", ['filename', 'title', 'hash', 'model_name', 'config'])
 checkpoints_list = {}
@@ -32,7 +33,7 @@ except Exception:
 
 def setup_model():
     if not os.path.exists(model_path):
-        os.makedirs(model_path)
+       os.makedirs(model_path)
 
     list_models()
 
