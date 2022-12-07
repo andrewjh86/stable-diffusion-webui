@@ -96,8 +96,9 @@ class Script(scripts.Script):
         return "Prompts from file or textbox"
 
     def ui(self, is_img2img):
-        checkbox_iterate = gr.Checkbox(label="Iterate seed every line", value=False)
-        checkbox_iterate_batch = gr.Checkbox(label="Use same random seed for all lines", value=False)
+        checkbox_iterate = gr.Checkbox(label="Iterate seed every line", value=True)
+        
+        checkbox_iterate_batch = gr.Checkbox(label="Use same random seed for all lines", value=True)
 
         prompt_txt = gr.Textbox(label="List of prompt inputs", lines=1)
         file = gr.File(label="Upload prompt inputs", type='bytes')
@@ -153,6 +154,7 @@ class Script(scripts.Script):
             copy_p = copy.copy(p)
             for k, v in args.items():
                 setattr(copy_p, k, v)
+     
 
             proc = process_images(copy_p)
             images += proc.images
