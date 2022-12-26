@@ -172,7 +172,7 @@ class InterrogateModels:
                             res += ", " + match
 
         except Exception:
-            print("Error interrogating", file=sys.stderr)
+            print(f"Error interrogating", file=sys.stderr)
             print(traceback.format_exc(), file=sys.stderr)
             res += "<error>"
 

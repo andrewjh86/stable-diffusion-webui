@@ -79,9 +79,7 @@ class DeepDanbooru:
 
         res = []
 
-        filtertags = set([x.strip().replace(' ', '_') for x in shared.opts.deepbooru_filter_tags.split(",")])
-
-        for tag in [x for x in tags if x not in filtertags]:
+        for tag in tags:
             probability = probability_dict[tag]
             tag_outformat = tag
             if use_spaces:
